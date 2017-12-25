@@ -1,13 +1,15 @@
-# 2017 Dashboard
-[Robot Code](https://github.com/frc1418/2017-robot) | **Dashboard** | [Vision](https://github.com/frc1418/2017-vision)
+# 2018 Dashboard
+[Robot Code](https://github.com/frc1418/2018-robot) | **Dashboard**
 
-This is FIRST Robotics Team 1418's 2017 driving dashboard, built off of the [FRC Dashboard](https://github.com/FRCDashboard/FRCDashboard) web driving dashboard framework.
+This is FIRST Robotics Team 1418's 2018 driving dashboard, built off of the [FRC Dashboard](https://github.com/FRCDashboard/FRCDashboard) web driving dashboard framework.
+
+This repository was originally cloned from 1418's [2017 dashboard](https://github.com/frc1418/2017-dashboard). As such, it continues to use `pynetworktables2js` rather than FRCDashboard's new Node-based server.
 
 ![Screenshot](images/screenshot.png)
 
 ## Setup
 ### Dependencies
-* Python 3 **(MUST be 3, not 2!)**
+* Python 3
 * `pynetworktables2js`
 
         pip3 install pynetworktables2js
@@ -77,10 +79,7 @@ The less desirable, but perfectly functional method of viewing your dashboard is
 It is recommended that while using the dashboard on your driver station, you close the top panel of the FRC DriverStation to make room for the dashboard.
 
 ## Authors
-* [Erik Boesen](https://github.com/ErikBoesen), developer of FRC Dashboard and head of UI team
-* [Aki Maher](https://github.com/17mahera), art
-
-Special Thanks to [Dustin Spicuzza](https://github.com/virtuald), mentor and head of the [RobotPy](http://github.com/robotpy) project, and [Leon Tan](https://github.com/lleontan), developer of pynetworktables2js and former UI team lead.
+* [Erik Boesen](https://github.com/ErikBoesen), developer of FRC Dashboard and 1418 Programming Captain
 
 ## Modifying
 FRC Dashboard, and by consequence this software, is licensed under the MIT license. Basically, modify as much as you like, as long as you give credit to the [original source](https://github.com/FRCDashboard/FRCDashboard) and don't hold us accountable for anything. More information in `LICENSE`.
