@@ -94,12 +94,6 @@ header {
     fill: var(--svg-fill-color-inverse);
 
 }
-#field-centric {
-    fill: #fe3131;
-}
-#fc-label {
-    fill: white;
-}
 #tuning {
     width: 50vw;
     height: 80vh;
@@ -132,14 +126,8 @@ header {
 }
 #field svg rect {
 }
-.field-group {
-    display: inline-block;
-    width: 150px;
-}
-.field-group:first-of-type {
-    margin-top: 70px;
-    margin-left: 10px;
-}
+/* TODO: Other field styles here */
+
 article {
     top: 0;
     left: 0;
@@ -184,11 +172,6 @@ text {
     bottom: 1px;
     right: 1vw;
 }
-#robot-arm {
-    -webkit-transform-origin: right;
-    -ms-transform-origin: right;
-    transform-origin: right;
-}
 #team {
     font-size: 28px;
     letter-spacing: -1px;
@@ -202,17 +185,4 @@ aside {
 }
 aside>* {
     margin-bottom: 20px;
-}
-#tank-label, #tank-readout {
-    display: inline;
-}
-#tank-gauge-container {
-    height: 20px;
-    width: 120px;
-    background: #444;
-    overflow: hidden;
-}
-#tank-gauge {
-    height: 20px;
-    background: #555;
 }
