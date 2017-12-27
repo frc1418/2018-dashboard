@@ -82,4 +82,4 @@ It is recommended that while using the dashboard on your driver station, you clo
 * [Erik Boesen](https://github.com/ErikBoesen), developer of FRC Dashboard and 1418 Programming Captain
 
 ## Modifying
-FRC Dashboard, and by consequence this software, is licensed under the MIT license. Basically, modify as much as you like, as long as you give credit to the [original source](https://github.com/FRCDashboard/FRCDashboard) and don't hold us accountable for anything. More information in `LICENSE`.
+In-season, use of this software is restricted by the FRC rules. After the season ends, the [MIT License](LICENSE) applies instead.
