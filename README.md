@@ -1,9 +1,9 @@
 # 2018 Dashboard
-[Robot Code](https://github.com/frc1418/2018-robot) | **Dashboard**
+[Robot Code](https://github.com/frc1418/2018-robot) | **Dashboard** | [Vision](https://github.com/frc1418/2018-vision)
 
-This is FIRST Robotics Team 1418's 2018 driving dashboard, built off of the [FRC Dashboard](https://github.com/FRCDashboard/FRCDashboard) web driving dashboard framework.
+> 1418's 2018 driving dashboard, built off of the [FRC Dashboard](https://github.com/FRCDashboard/FRCDashboard) web driving dashboard framework.
 
-This repository was originally cloned from 1418's [2017 dashboard](https://github.com/frc1418/2017-dashboard). As such, it continues to use `pynetworktables2js` rather than FRCDashboard's new Node-based server.
+NOTE: This repository was originally cloned from 1418's [2017 dashboard](https://github.com/frc1418/2017-dashboard). As such, it continues to use `pynetworktables2js` rather than FRCDashboard's new Node-based server.
 
 ![Screenshot](images/screenshot.png)
 
