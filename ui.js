@@ -68,8 +68,18 @@ function onValueChanged(key, value, isNew) {
 
 	// This switch statement chooses which UI element to update when a NetworkTables variable changes.
 	switch (key) {
+		case '/robot/mode':
+			switch (value) {
+				case 'auto':
+					ui.timer.innerHTML = 'AUTO';
+					break;
+				case 'disabled':
+					ui.timer.innerHTML = 'DISBL';
+					break;
+			}
+			break;
 		case '/robot/time':
-			ui.timer.innerHTML = Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+			ui.timer.innerHTML = value < 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
 			break;
 		case '/SmartDashboard/drive/drive/navx_yaw': // Gyro rotation
 			ui.gyro.val = value;
