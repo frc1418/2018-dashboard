@@ -60,16 +60,17 @@ function onRobotConnection(connected) {
 }
 
 function onValueChanged(key, value, isNew) {
-	//console.log(key + ' is ' + value);
+	console.log(key, value);
 	// Sometimes, NetworkTables will pass booleans as strings. This corrects for that.
 	// We could also use JSON.parse() on the value if it matches either value. This would be less efficient.
-	if (value == 'true')
-		value = true;
-	else if (value == 'false')
-		value = false;
+	if (value == 'true') value = true;
+	else if (value == 'false') value = false;
 
 	// This switch statement chooses which UI element to update when a NetworkTables variable changes.
 	switch (key) {
+		case '/robot/time':
+			ui.timer.innerHTML = Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+			break;
 		case '/SmartDashboard/drive/drive/navx_yaw': // Gyro rotation
 			ui.gyro.val = value;
 			ui.gyro.visualVal = Math.floor(ui.gyro.val - ui.gyro.offset);
@@ -77,11 +78,6 @@ function onValueChanged(key, value, isNew) {
 
 			ui.gyro.arm.style.transform = ('rotate(' + ui.gyro.visualVal + 'deg)');
 			ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
-			break;
-			// The following case is an example, for a robot with an arm at the front.
-			// Info on the actual robot that this works with can be seen at thebluealliance.com/team/1418/2016.
-		case '/SmartDashboard/time':
-			ui.timer.innerHTML = Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
 			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
