@@ -27,7 +27,7 @@ var ui = {
 		warning: document.getElementById('auto-warning'),
 		warn: function() {
 			// TODO: Check any additional auto configurations that should be present
-			if (NetworkTables.getValue('/SmartDashboard/Autonomous Mode/selected') == '' || !ui.auto.field.getPosition())
+			if (NetworkTables.getValue('SmartDashboard/Autonomous Mode/selected') == '' || !ui.auto.field.getPosition())
 				ui.autonomous.warning.display = 'block';
 		}
 	},
@@ -70,16 +70,14 @@ function onValueChanged(key, value, isNew) {
 	switch (key) {
 		case '/robot/mode':
 			switch (value) {
-				case 'auto':
-					ui.timer.innerHTML = 'AUTO';
-					break;
 				case 'disabled':
 					ui.timer.innerHTML = 'DISBL';
 					break;
 			}
 			break;
 		case '/robot/time':
-			ui.timer.innerHTML = value < 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+			ui.timer.innerHTML = value <= 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+			ui.timer.className = value == 0 ? '' : (value <= 10 ? 'blink' : (value <= 30 ? 'low' : (value <= 90 ? 'med' : (value <= 135 ? 'high' : 'auto'))));
 			break;
 		case '/SmartDashboard/drive/drive/navx_yaw': // Gyro rotation
 			ui.gyro.val = value;
@@ -168,7 +166,7 @@ ui.gyro.container.onclick = function() {
 	ui.gyro.offset = ui.gyro.val;
 	// Trigger the gyro to recalculate value.
 	// Do as I say, not as I do.
-	onValueChanged('/SmartDashboard/drive/drive/navx_yaw', ui.gyro.val);
+	onValueChanged('SmartDashboard/drive/drive/navx_yaw', ui.gyro.val);
 };
 
 // Open tuning section when button is clicked
@@ -184,7 +182,7 @@ ui.auto.button.onclick = function() {
 ui.tuning.set.onclick = function() {
 	// Make sure the inputs have content, if they do update the NT value
 	if (ui.tuning.name.value && ui.tuning.value.value) {
-		NetworkTables.putValue('/SmartDashboard/' + ui.tuning.name.value, ui.tuning.value.value);
+		NetworkTables.putValue(ui.tuning.name.value, ui.tuning.value.value);
 	}
 };
 ui.tuning.get.onclick = function() {
@@ -193,15 +191,15 @@ ui.tuning.get.onclick = function() {
 
 // Update NetworkTables when autonomous selector is changed
 ui.auto.select.onchange = function() {
-	NetworkTables.putValue('/SmartDashboard/autonomous/mode/selected', this.value);
+	NetworkTables.putValue('SmartDashboard/autonomous/mode/selected', this.value);
 };
 
 ui.camera.viewer.onclick = function() {
     ui.camera.id++;
 	if (ui.camera.id === ui.camera.srcs.length) ui.camera.id = 0;
-	NetworkTables.putValue('/SmartDashboard/camera_id', ui.camera.id);
+	NetworkTables.putValue('SmartDashboard/camera_id', ui.camera.id);
 };
 
 ui.theme.select.onchange = function() {
-    NetworkTables.putValue('/SmartDashboard/theme', this.value);
+    NetworkTables.putValue('SmartDashboard/theme', this.value);
 };
