@@ -1,3 +1,8 @@
+@font-face {
+    font-family: 'DS-Digital';
+    src: local('DS-Digital'), url(digital.ttf) format('truetype');
+    unicode-range: U+0030—003A;
+}
 * {
     box-sizing: border-box;
     margin: 0;
@@ -57,12 +62,12 @@ body>* {
     background: #222;
 }
 #timer {
-    font-family: monospace;
+    font-family: 'DS-Digital', monospace;
     display: block;
     height: 20vh;
     width: 25vw;
     top: 0;
-    left: 35vw;
+    left: 38.7vw;
     font-size: 20vh;
     line-height: .8;
 }
