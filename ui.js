@@ -70,9 +70,6 @@ function onValueChanged(key, value, isNew) {
 	switch (key) {
 		case '/robot/mode':
 			switch (value) {
-				case 'auto':
-					ui.timer.innerHTML = 'AUTO';
-					break;
 				case 'disabled':
 					ui.timer.innerHTML = 'DISBL';
 					break;
@@ -80,6 +77,7 @@ function onValueChanged(key, value, isNew) {
 			break;
 		case '/robot/time':
 			ui.timer.innerHTML = value <= 0 ? '0:00' : Math.floor(value / 60) + ':' + (value % 60 < 10 ? '0' : '') + value % 60;
+			ui.timer.className = value == 0 ? '' : (value <= 10 ? 'blink' : (value <= 30 ? 'low' : (value <= 90 ? 'med' : (value <= 135 ? 'high' : 'auto'))));
 			break;
 		case '/SmartDashboard/drive/drive/navx_yaw': // Gyro rotation
 			ui.gyro.val = value;

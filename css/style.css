@@ -67,10 +67,43 @@ body>* {
     height: 20vh;
     width: 25vw;
     top: 0;
-    left: 38.7vw;
+    left: 35vw;
     font-size: 20vh;
     line-height: .8;
 }
+.high {
+    color: #42C752;
+}
+.med {
+    color: #FFEB3B;
+}
+.low {
+    color: #D32F2F;
+}
+.blink {
+    color: #D32F2F;
+    animation: 0.75s linear infinite blinker;
+}
+.auto {
+    color: #0E68FA;
+}
+.auto::after {
+    content: 'AUTO';
+    font-family: 'Courier';
+    font-size: 25pt;
+    position: absolute;
+    vertical-align: top;
+    padding: 5px 15px 15px;
+}
+@keyframes blinker {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+@keyframes st {
+    0%   {opacity: 1;}
+    100% {opacity: 1;}
+}
+
 header {
     width: 20vw;
     height: 25vh;
