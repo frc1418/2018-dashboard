@@ -99,10 +99,6 @@ body>* {
     0%   {opacity: 1;}
     100% {opacity: 0;}
 }
-@keyframes st {
-    0%   {opacity: 1;}
-    100% {opacity: 1;}
-}
 
 header {
     width: 20vw;
