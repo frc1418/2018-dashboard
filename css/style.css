@@ -214,6 +214,31 @@ text {
     font-size: 28px;
     letter-spacing: -1px;
 }
+#auto-modes {
+    width: 300px;
+    height: 300px;
+}
+#auto-modes svg {
+    position: relative;
+    bottom: 20px;
+    right: 100px;
+}
+#auto-options {
+    position: relative;
+    left: 50px;
+}
+#field-position input, #auto-modes select, #auto-modes input {
+    margin: 5px;
+    margin-top: 10px;
+}
+#fetch, #cube {
+    position: relative;
+    display: block;
+}
+.cube {
+    display: block;
+    margin-top: 10px;
+}
 aside {
     right: 0;
     top: 0;

@@ -44,7 +44,36 @@
                 <!-- This gets populated by JS -->
             </select>
         </div>
-        <!-- TODO: Field diagram with position selection etc., see last year's dashboard for inspiration -->
+        <div id="auto-modes">
+            <div id="field">
+                <svg width="500px" height="250px">
+                    <rect width="80" height="25" x="200" y="40"/>
+                    <rect width="5" height="35" x="237.5" y="65"/>
+                    <rect width="80" height="50" x="200" y="100"/>
+                    <rect width="5" height="35" x="237.5" y="150"/>
+                    <rect width="80" height="25" x="200" y="185"/>
+                </svg>
+            </div>
+            <div id="auto-options">
+                <div id="field-position">
+                    <label>Left<input type="radio" id="left" name="position" value="left"></label>
+                    <label>Right<input type="radio" id="right" name="position" value="right"></label>
+                    <label>Middle<input type="radio" id="middle" name="position" value="middle"></label>
+                </div>
+                <input type="checkbox" id="dump">Dump in switch</input>
+                <label class="cube">Fetch another cube:<select id="fetch">
+                <option value="">----</option>
+                <option value="pile">Pile</option>
+                <option value="line">Line</option>
+            </select></label>
+                <label class="cube">Second cube destination:<select id="cube">
+                <option value="">----</option>
+                <option value="switch">Switch</option>
+                <option value="vault">Vault</option>
+            </select></label>
+            </div>
+        </div>
+    </div>
     </div>
     </div>
     <!-- The main body of the dashboard -->
