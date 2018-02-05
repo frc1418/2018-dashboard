@@ -23,6 +23,15 @@ var ui = {
 		button: document.getElementById('auto-button'),
 		panel: document.getElementById('auto'),
 		select: document.getElementById('auto-select'),
+		num: 0,
+		dump: document.getElementById('dump'),
+		fetch: document.getElementById('fetch'),
+		cube: document.getElementById('cube'),
+		position: {
+			right: document.getElementById('right'),
+			left: document.getElementById('left'),
+			middle: document.getElementById('middle')
+		},
 		// TODO: Warning unimplemented
 		warning: document.getElementById('auto-warning'),
 		warn: function() {
@@ -202,4 +211,32 @@ ui.camera.viewer.onclick = function() {
 
 ui.theme.select.onchange = function() {
     NetworkTables.putValue('SmartDashboard/theme', this.value);
+};
+
+ui.auto.dump.onclick = function() {
+	if (ui.auto.num === 0) {
+		NetworkTables.putValue('autonomous/modular/dump', true);
+		ui.auto.num++;
+	} else {
+		NetworkTables.putValue('autonomous/modular/dump', false);
+		ui.auto.num--;
+	}
+};
+
+ui.auto.fetch.onchange = function() {
+	NetworkTables.putValue('autonomous/modular/fetch', this.value);
+};
+
+ui.auto.cube.onchange = function() {
+	NetworkTables.putValue('autonomous/modular/cube', this.value);
+};
+
+ui.auto.position.left.onclick = function() {
+	NetworkTables.putValue('autonomous/position', this.value);
+};
+ui.auto.position.right.onclick = function() {
+	NetworkTables.putValue('autonomous/position', this.value);
+};
+ui.auto.position.middle.onclick = function() {
+	NetworkTables.putValue('autonomous/position', this.value);
 };
