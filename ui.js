@@ -40,6 +40,10 @@ var ui = {
 				ui.autonomous.warning.display = 'block';
 		}
 	},
+	tankPressure: {
+		gauge: document.getElementById('tank-gauge'),
+		readout: document.getElementById('tank-readout')
+	},
     camera: {
 		viewer: document.getElementById('camera'),
 		id: 0,
@@ -100,6 +104,17 @@ function onValueChanged(key, value, isNew) {
             ui.theme.select.value = value;
             ui.theme.link.href = 'css/' + value + '.css';
             break;
+		case '/robot/pressure':
+			ui.tankPressure.gauge.style.width = value + 'px';
+			if (value < 20) {
+				ui.tankPressure.gauge.style.background = 'red';
+			} else if (value < 60) {
+				ui.tankPressure.gauge.style.background = 'yellow';
+			} else {
+				ui.tankPressure.gauge.style.background = 'green';
+			}
+			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
+			break;
 		case '/SmartDashboard/camera_id':
 			ui.camera.id = value;
 			ui.camera.viewer.style.backgroundImage = 'url(' + ui.camera.srcs[ui.camera.id] + ')';

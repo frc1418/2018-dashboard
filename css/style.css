@@ -249,3 +249,13 @@ aside {
 aside>* {
     margin-bottom: 20px;
 }
+#tank-gauge-container {
+    height: 20px;
+    width: 120px;
+    background: #444;
+    overflow: hidden;
+}
+#tank-gauge {
+    height: 20px;
+    background: #555;
+}
