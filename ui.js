@@ -96,6 +96,20 @@ function onValueChanged(key, value, isNew) {
 			ui.gyro.arm.style.transform = ('rotate(' + ui.gyro.visualVal + 'deg)');
 			ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
 			break;
+		case '/SmartDashboard/Autonomous Mode/options': // Load list of prewritten autonomous modes
+			// Clear previous list
+			while (ui.auto.select.firstChild) {
+				ui.auto.select.removeChild(ui.auto.select.firstChild);
+			}
+			// Make an option for each autonomous mode and put it in the selector
+			for (i = 0; i < value.length; i++) {
+				var option = document.createElement('option');
+				option.innerHTML = value[i];
+				ui.auto.select.appendChild(option);
+			}
+			// Set value to the already-selected mode. If there is none, nothing will happen.
+			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
             ui.theme.link.href = 'css/' + value + '.css';
