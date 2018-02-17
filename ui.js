@@ -55,7 +55,12 @@ var ui = {
     theme: {
         select: document.getElementById('theme-select'),
         link: document.getElementById('theme-link')
-    }
+    },
+	replay: {
+		wrapper: document.getElementById('replay-auto'),
+		name: document.getElementById('replay-name'),
+		button: document.getElementById('set-replay-auto')
+	}
 };
 
 // Sets function to be called on NetworkTables connect. Commented out because it's usually not necessary.
@@ -244,6 +249,12 @@ ui.tuning.get.onclick = function() {
 // Update NetworkTables when autonomous selector is changed
 ui.auto.select.onchange = function() {
 	NetworkTables.putValue('SmartDashboard/autonomous/mode/selected', this.value);
+	var visibility = 'hidden';
+	if (this.value === 'Replay') {
+		visibility = 'visible';
+	}
+
+	ui.replay.wrapper.style.visibility = visibility;
 };
 
 ui.camera.viewer.onclick = function() {
@@ -283,3 +294,7 @@ ui.auto.position.right.onclick = function() {
 ui.auto.position.middle.onclick = function() {
 	NetworkTables.putValue('autonomous/position', this.value);
 };
+
+ui.replay.button.onclick = function() {
+	NetworkTables.putValue('autonomous/replay/recording_name', ui.replay.name.value);
+}

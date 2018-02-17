@@ -256,3 +256,11 @@ aside>* {
     height: 20px;
     background: #555;
 }
+#replay-auto {
+    position: relative;
+    margin-top: 5px;
+    visibility: hidden;
+}
+#replay-auto label {
+    margin-right: 5px;
+}
