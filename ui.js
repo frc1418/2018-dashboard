@@ -100,6 +100,20 @@ function onValueChanged(key, value, isNew) {
 			ui.gyro.arm.style.transform = ('rotate(' + ui.gyro.visualVal + 'deg)');
 			ui.gyro.number.innerHTML = ui.gyro.visualVal + 'º';
 			break;
+		case '/SmartDashboard/Autonomous Mode/options': // Load list of prewritten autonomous modes
+			// Clear previous list
+			while (ui.auto.select.firstChild) {
+				ui.auto.select.removeChild(ui.auto.select.firstChild);
+			}
+			// Make an option for each autonomous mode and put it in the selector
+			for (i = 0; i < value.length; i++) {
+				var option = document.createElement('option');
+				option.innerHTML = value[i];
+				ui.auto.select.appendChild(option);
+			}
+			// Set value to the already-selected mode. If there is none, nothing will happen.
+			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
             ui.theme.link.href = 'css/' + value + '.css';
@@ -114,6 +128,20 @@ function onValueChanged(key, value, isNew) {
 				ui.tankPressure.gauge.style.background = 'green';
 			}
 			ui.tankPressure.readout.innerHTML = Math.round(value) + 'psi';
+			break;
+		case '/robot/plates':
+			var table = document.getElementById('auto-table');
+			var color = NetworkTables.getValue('/FMSInfo/isRedAlliance') ? 'red' : 'blue';
+			for (i = value.length - 1; i >= 0; i--) {
+				if (value[i] === 'L') {
+					table.rows[i+1].cells[0].style.backgroundColor = color;
+					table.rows[i+1].cells[1].style.backgroundColor = '';
+				}
+				else {
+					table.rows[i+1].cells[1].style.backgroundColor = color;
+					table.rows[i+1].cells[0].style.backgroundColor = '';
+				}
+			}
 			break;
 		case '/SmartDashboard/camera_id':
 			ui.camera.id = value;

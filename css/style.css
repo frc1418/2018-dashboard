@@ -163,6 +163,7 @@ header {
     margin-bottom: calc(-27 * 8px);
 }
 #field svg rect {
+    color: red;
 }
 /* TODO: Other field styles here */
 
