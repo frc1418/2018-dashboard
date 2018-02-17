@@ -54,6 +54,7 @@
                     <rect width="80" height="25" x="200" y="185"/>
                 </svg>
             </div>
+
             <div id="auto-options">
                 <div id="field-position">
                     <label>Left<input type="radio" id="left" name="position" value="left"></label>
@@ -121,6 +122,26 @@
             </div>
         </div>
         <div id="auto-warning">WARNING: Autonomous not configured!</div>
+        <div id="auto-diagram">
+            <table id="auto-table" border="2">
+                <tr>
+                    <td width="50%"><strong>Left</strong></td>
+                    <td width="50%"><strong>Right</strong></td>
+                </tr>
+                <tr>
+                    <td>Far Switch</td>
+                    <td>Far Switch</td>
+                </tr>
+                <tr>
+                    <td>Scale</td>
+                    <td>Scale</td>
+                </tr>
+                <tr>
+                    <td>Our Switch</td>
+                    <td>Our Switch</td>
+                </tr>
+            </table>
+        </div>
     </aside>
     <script src="/networktables/networktables.js"></script>
     <script src="ui.js"></script>
