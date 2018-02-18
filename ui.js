@@ -59,7 +59,6 @@ var ui = {
 	replay: {
 		wrapper: document.getElementById('replay-auto'),
 		name: document.getElementById('replay-name'),
-		button: document.getElementById('set-replay-auto')
 	}
 };
 
@@ -295,6 +294,6 @@ ui.auto.position.middle.onclick = function() {
 	NetworkTables.putValue('autonomous/position', this.value);
 };
 
-ui.replay.button.onclick = function() {
-	NetworkTables.putValue('autonomous/Replay/recording_name', ui.replay.name.value);
+ui.replay.name.onchange = function() {
+	NetworkTables.putValue('autonomous/Replay/source', this.value);
 }
