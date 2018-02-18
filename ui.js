@@ -248,7 +248,7 @@ ui.tuning.get.onclick = function() {
 
 // Update NetworkTables when autonomous selector is changed
 ui.auto.select.onchange = function() {
-	NetworkTables.putValue('SmartDashboard/autonomous/mode/selected', this.value);
+	NetworkTables.putValue('SmartDashboard/Autonomous Mode/selected', this.value);
 	var visibility = 'hidden';
 	if (this.value === 'Replay') {
 		visibility = 'visible';
@@ -296,5 +296,5 @@ ui.auto.position.middle.onclick = function() {
 };
 
 ui.replay.button.onclick = function() {
-	NetworkTables.putValue('autonomous/replay/recording_name', ui.replay.name.value);
+	NetworkTables.putValue('autonomous/Replay/recording_name', ui.replay.name.value);
 }
