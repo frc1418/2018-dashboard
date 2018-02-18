@@ -59,6 +59,7 @@ var ui = {
 	replay: {
 		wrapper: document.getElementById('replay-auto'),
 		name: document.getElementById('replay-name'),
+		target: document.getElementById('recording-target')
 	}
 };
 
@@ -120,6 +121,13 @@ function onValueChanged(key, value, isNew) {
 			break;
 		case '/SmartDashboard/Autonomous Mode/selected':
 			ui.auto.select.value = value;
+			ui.replay.wrapper.style.display = value === 'Replay' ? 'block' : 'none';
+			break;
+		case '/autonomous/Replay/source':
+			ui.replay.name.value = value;
+			break;
+		case '/components/recorder/title':
+			ui.replay.target.value = value;
 			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
@@ -295,4 +303,7 @@ ui.auto.position.middle.onclick = function() {
 
 ui.replay.name.onchange = function() {
 	NetworkTables.putValue('autonomous/Replay/source', this.value);
+}
+ui.replay.target.onchange = function() {
+	NetworkTables.putValue('components/recorder/title', this.value);
 }
