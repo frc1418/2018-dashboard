@@ -248,12 +248,8 @@ ui.tuning.get.onclick = function() {
 // Update NetworkTables when autonomous selector is changed
 ui.auto.select.onchange = function() {
 	NetworkTables.putValue('SmartDashboard/Autonomous Mode/selected', this.value);
-	var visibility = 'hidden';
-	if (this.value === 'Replay') {
-		visibility = 'visible';
-	}
 
-	ui.replay.wrapper.style.visibility = visibility;
+	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'auto' : 'none';
 };
 
 ui.camera.viewer.onclick = function() {
