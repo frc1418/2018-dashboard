@@ -116,7 +116,10 @@ function onValueChanged(key, value, isNew) {
 				ui.auto.select.appendChild(option);
 			}
 			// Set value to the already-selected mode. If there is none, nothing will happen.
-			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/currentlySelectedMode');
+			ui.auto.select.value = NetworkTables.getValue('/SmartDashboard/Autonomous Mode/selected');
+			break;
+		case '/SmartDashboard/Autonomous Mode/selected':
+			ui.auto.select.value = value;
 			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
@@ -249,7 +252,7 @@ ui.tuning.get.onclick = function() {
 ui.auto.select.onchange = function() {
 	NetworkTables.putValue('SmartDashboard/Autonomous Mode/selected', this.value);
 
-	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'auto' : 'none';
+	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'block' : 'none';
 };
 
 ui.camera.viewer.onclick = function() {
