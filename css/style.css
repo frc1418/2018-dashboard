@@ -107,7 +107,7 @@ header {
     left: 60vw;
     color: white;
 }
-#camera {
+#first-camera {
     padding: 0;
     position: fixed;
     bottom: 0;
@@ -117,7 +117,21 @@ header {
     overflow: hidden;
     background-color: #333;
     /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
-    background-image: url('http://10.14.18.2:1181/?action=stream');
+    background-image: url('http://10.14.18.2:1181');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+#second-camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 35vw;
+    width: 50vw;
+    height: 80vh;
+    overflow: hidden;
+    background-color: #333;
+    /* You'll need to mess with this a bit to get your camera to work. Replace the url with a live-updating image feed from your camera. Using other camera streaming systems will require some tweaking. */
+    background-image: url('http://10.14.18.2:1181');
     background-size: contain;
     background-repeat: no-repeat;
 }
