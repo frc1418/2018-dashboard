@@ -127,11 +127,23 @@
         </div>
         <div id="auto-warning">WARNING: Autonomous not configured!</div>
         <div id="auto-diagram">
-            <table id="auto-table" border="2">
-                <tr>
-                    <td width="50%"><strong>Left</strong></td>
-                    <td width="50%"><strong>Right</strong></td>
-                </tr>
+            <svg id="auto-table" width=165 height=185>
+                <!-- Far switch -->
+                <g id="auto-table-far-switch">
+                    <rect width=50 height=50 x=30 y=10 />
+                    <rect width=50 height=50 x=90 y=10 />
+                </g>
+                <!-- Scale -->
+                <g id="auto-table-scale">
+                    <rect width=50 height=50 x=10 y=70 />
+                    <rect width=50 height=50 x=110 y=70 />
+                </g>
+                <!-- Near switch -->
+                <g id="auto-table-near-switch">
+                    <rect width=50 height=50 x=30 y=130 />
+                    <rect width=50 height=50 x=90 y=130 />
+                </g>
+
                 <tr>
                     <td>Far Switch</td>
                     <td>Far Switch</td>

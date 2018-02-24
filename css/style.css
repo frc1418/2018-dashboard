@@ -52,6 +52,12 @@ input[type="checkbox"] {
     -webkit-filter: saturate(0);
     filter: saturate(0);
 }
+table {
+    border-collapse: collapse;
+}
+td {
+    padding: 3px;
+}
 
 /* Major interface panes, aside, article, header, etc. */
 
