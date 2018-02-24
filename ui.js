@@ -32,6 +32,11 @@ var ui = {
 			left: document.getElementById('left'),
 			middle: document.getElementById('middle')
 		},
+		plates: {
+			far: document.getElementById('auto-table-far-switch'),
+			scale: document.getElementById('auto-table-scale'),
+			near: document.getElementById('auto-table-near-switch')
+		},
 		// TODO: Warning unimplemented
 		warning: document.getElementById('auto-warning'),
 		warn: function() {
@@ -147,16 +152,16 @@ function onValueChanged(key, value, isNew) {
 		case '/robot/plates':
 			var table = document.getElementById('auto-table');
 			var color = NetworkTables.getValue('/FMSInfo/isRedAlliance') ? 'red' : 'blue';
-			for (i = value.length - 1; i >= 0; i--) {
-				if (value[i] === 'L') {
-					table.rows[i+1].cells[0].style.backgroundColor = color;
-					table.rows[i+1].cells[1].style.backgroundColor = '';
-				}
-				else {
-					table.rows[i+1].cells[1].style.backgroundColor = color;
-					table.rows[i+1].cells[0].style.backgroundColor = '';
-				}
-			}
+
+			ui.auto.plates.far.children[0].style.fill = value[2] == 'L' ? color : '';
+			ui.auto.plates.far.children[1].style.fill = value[2] == 'L' ? '' : color;
+
+			ui.auto.plates.scale.children[0].style.fill = value[1] == 'L' ? color : '';
+			ui.auto.plates.scale.children[1].style.fill = value[1] == 'L' ? '' : color;
+
+			ui.auto.plates.near.children[0].style.fill = value[0] == 'L' ? color : '';
+			ui.auto.plates.near.children[1].style.fill = value[0] == 'L' ? '' : color;
+
 			break;
 		case '/SmartDashboard/camera_id':
 			ui.camera.id = value;
