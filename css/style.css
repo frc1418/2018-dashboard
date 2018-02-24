@@ -122,7 +122,7 @@ header {
     height: 80vh;
     overflow: hidden;
     background-color: #333;
-    background-image: url('http://10.14.18.2:1181');
+    background-image: url('http://10.14.18.2:1181/?action=stream');
     background-size: contain;
     background-repeat: no-repeat;
 }

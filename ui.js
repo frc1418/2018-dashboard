@@ -53,8 +53,8 @@ var ui = {
 		viewer: document.getElementById('camera'),
 		id: 0,
 		srcs: [ // Will default to first camera
-            'http://10.14.18.2:1181',
-            'http://10.14.18.2:1182'
+            'http://10.14.18.2:1181/?action=stream',
+            'http://10.14.18.2:1182/?action=stream'
         ]
     },
     theme: {
