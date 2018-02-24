@@ -274,13 +274,8 @@ ui.theme.select.onchange = function() {
 };
 
 ui.auto.dump.onclick = function() {
-	if (ui.auto.num === 0) {
-		NetworkTables.putValue('autonomous/modular/dump', true);
-		ui.auto.num++;
-	} else {
-		NetworkTables.putValue('autonomous/modular/dump', false);
-		ui.auto.num--;
-	}
+	NetworkTables.putValue('autonomous/modular/dump', ui.auto.num === 0);
+	ui.auto.num += (ui.auto.num === 0);
 };
 
 ui.auto.fetch.onchange = function() {
