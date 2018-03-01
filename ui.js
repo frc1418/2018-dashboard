@@ -45,6 +45,9 @@ var ui = {
 				ui.autonomous.warning.display = 'block';
 		}
 	},
+	vufine: {
+		button: document.getElementById('vufine-button')
+	},
 	tankPressure: {
 		gauge: document.getElementById('tank-gauge'),
 		readout: document.getElementById('tank-readout')
@@ -249,6 +252,11 @@ ui.tuning.button.onclick = function() {
 ui.auto.button.onclick = function() {
 	ui.auto.panel.style.display = (ui.auto.panel.style.display === 'none') ? 'block' : 'none';
 };
+
+// Open vufine window when button is clicked
+ui.vufine.button.onclick = function() {
+	
+}
 
 // Manages get and set buttons at the top of the tuning pane
 ui.tuning.set.onclick = function() {
