@@ -6,6 +6,8 @@ const app = electron.app;
 // Module to create native browser window.
 const BrowserWindow = electron.BrowserWindow;
 
+const ipcMain = electron.ipcMain;
+
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow;
@@ -89,4 +91,23 @@ app.on('activate', function() {
 	if (mainWindow === null) {
 		createWindow();
 	}
+});
+
+// In this file you can include the rest of your app's specific main process
+// code. You can also put them in separate files and require them here.
+ipcMain.on('vufine', function(event, arg) {
+	//setting dialog
+	var vufineWindow = new BrowserWindow({
+		width: 1000,
+		height: 500
+	});
+	// Load options page
+	vufineWindow.loadURL(`file://${ __dirname}/vufine.html`);
+
+	vufineWindow.on('closed', function() {
+		// Dereference the window object, usually you would store windows
+		// in an array if your app supports multi windows, this is the time
+		// when you should delete the corresponding element.
+		vufineWindow = null;
+	});
 });

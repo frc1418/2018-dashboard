@@ -1,3 +1,5 @@
+const ipc = require('electron').ipcRenderer;
+
 // Define UI elements
 var ui = {
 	timer: document.getElementById('timer'),
@@ -255,7 +257,7 @@ ui.auto.button.onclick = function() {
 
 // Open vufine window when button is clicked
 ui.vufine.button.onclick = function() {
-	
+	ipc.send('vufine');
 }
 
 // Manages get and set buttons at the top of the tuning pane
