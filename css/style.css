@@ -210,7 +210,7 @@ text {
 #robot-diagram {
     position: absolute;
     bottom: 1px;
-    right: 1vw;
+    left: 1vw;
 }
 #team {
     font-size: 28px;
