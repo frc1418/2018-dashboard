@@ -62,6 +62,7 @@ var ui = {
             'http://10.14.18.2:1182/?action=stream'
         ]
     },
+
     theme: {
         select: document.getElementById('theme-select'),
         link: document.getElementById('theme-link')

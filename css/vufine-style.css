@@ -1,0 +1,92 @@
+@font-face {
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    --svg-fill-color: white;
+    --svg-fill-color-inverse: white;
+}
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    font: 16px sans-serif;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: white;
+    overflow: hidden;
+    background: #222;
+}
+/* Major interface panes, aside, article, header, etc. */
+body>* {
+    padding: 10px;
+    position: fixed;
+    overflow: scroll;
+    background: #222;
+}
+@keyframes blinker {
+    0%   {opacity: 1;}
+    100% {opacity: 0;}
+}
+#camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    background-image: url('http://10.14.18.2:1181/?action=stream');
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1;
+}
+article {
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 35vw;
+}
+svg * {
+    stroke: white;
+    fill: #222;
+    stroke-width: 2;
+    -webkit-transform-origin: center;
+    -ms-transform-origin: center;
+    transform-origin: center;
+}
+.svgsolid {
+    fill: var(--svg-fill-color);
+}
+.svginvis {
+    stroke: #222;
+    stroke-width: 0;
+}
+.ballicons {}
+text {
+    font-size: 16px;
+    letter-spacing: 2px;
+    stroke: none;
+    fill: white;
+}
+#gyro {
+    position: absolute;
+    background-color: transparent;
+}
+#gyro-robot {
+    -webkit-transform-origin: bottom;
+    -ms-transform-origin: bottom;
+    transform-origin: bottom;
+}
+#gyro-number {
+    font-size: 25px;
+    text-anchor: middle;
+}
+.cube {
+    display: block;
+    margin-top: 10px;
+}
