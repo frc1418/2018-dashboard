@@ -93,27 +93,45 @@
                 <rect x="215" y="210" width="15" height="40" id="rr_module" />
             </g>
             <circle id="field-centric" cx="160" cy="120" r="20" />
-            <text id="fc-label" x="148" y="126">FC</text>
-            <text id="gyro-number" x="160" y="200">0º</text>
+            <text id="fc-label" x="148" y="126" font-size=16>FC</text>
+            <text id="gyro-number" x="160" y="200" font-size=16>0º</text>
         </svg>
         <svg id="robot-diagram" width="332" height="450">
-            <circle cx="100" cy="280" r="25" />
-            <rect x="75" y="280" width="230" height="120" />
-            <rect x="85" y="290" width="210" height="120" />
-            <rect x="240" y="370" width="55" height="10" />
-            <circle cx="185" cy="330" r="50" />
-            <rect x="75" y="280" width="230" height="10" />
-            <rect class="svginvis" x="166" y="291" width="120" height="50" />
-            <circle class="svgsolid"cx="185" cy="330" r="20" />
-            <circle cx="185" cy="330" r="10" />
-            <circle class="ballicons" cx="200" cy="365" r="10" />
-            <circle class="ballicons" cx="217" cy="353" r="10" />
-            <circle class="ballicons" cx="180" cy="370" r="10" />
-            <circle class="ballicons" cx="161" cy="360" r="10" />
-            <circle cx="100" cy="410" r="25" />
-            <circle cx="270" cy="410" r="25" />
-            <rect x="60" y="380" width="250" height="30" />
-            <text x="185" y="405" id="team" text-anchor="middle">1418</text>
+            <!-- Back -->
+            <rect x=15 y=100 width=15 height=280 />
+
+            <circle cx=30 cy=100 r=35 stroke="dotted" class="gear" />
+            <circle cx=30 cy=100 r=33 stroke="dotted" />
+
+
+            <g id="robot-arm">
+                <rect x=20 y=90 width=250 height=15 />
+
+                <g id="robot-arm-extension">
+                    <rect x=260 y=89 width=60 height=18 />
+                    <rect x=280 y=90 width=40 height=60 />
+                </g>
+            </g>
+
+            <!-- Tilted bar with tanks -->
+            <g id="robot-crosspiece" transform="rotate(50 30 170)">
+                <rect x=20 y=170 width=290 height=15 />
+                <rect x=60 y=175 width=75 height=25 />
+                <text x=70 y=186 font-size=10>Clippard</text>
+                <text x=90 y=195 font-size=5>Air Power</text>
+                <rect x=140 y=175 width=75 height=25 />
+                <text x=150 y=186 font-size=10 >Clippard</text>
+                <text x=170 y=195 font-size=5>Air Power</text>
+            </g>
+
+            <!-- Tires -->
+            <circle cx=50 cy=410 r=25 />
+            <circle cx=135 cy=415 r=25 />
+            <circle cx=220 cy=410 r=25 />
+
+            <!-- Bumper -->
+            <rect x=10 y=380 width=250 height=30 rx=5 />
+            <text x=135 y=405 id="team" font-size=16 text-anchor="middle">1418</text>
         </svg>
     </article>
     <!-- The sidebar of the dashboard. Designed for smaller control elements like selection boxes and small buttons. -->

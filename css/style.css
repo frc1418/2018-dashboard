@@ -185,13 +185,7 @@ svg * {
 .svgsolid {
     fill: var(--svg-fill-color);
 }
-.svginvis {
-    stroke: #222;
-    stroke-width: 0;
-}
-.ballicons {}
 text {
-    font-size: 16px;
     letter-spacing: 2px;
     stroke: none;
     fill: white;
@@ -211,6 +205,20 @@ text {
     position: absolute;
     bottom: 1px;
     left: 1vw;
+}
+#robot-arm {
+    transform-origin: left;
+    animation: spin-arm 2s infinite alternate-reverse;
+}
+@keyframes spin-arm {
+    from { transform: rotate(30deg); }
+    to   { transform: rotate(40deg);  }
+}
+#robot-crosspiece {
+
+}
+.gear {
+    stroke-dasharray: 3 3;
 }
 #team {
     font-size: 28px;
