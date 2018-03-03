@@ -126,6 +126,19 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
 }
+#vufine-camera {
+    padding: 0;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #333;
+    background-image: url('http://10.14.18.2:1181/?action=stream');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
 #camera-buttons > rect {
     transition: fill .2s;
 }

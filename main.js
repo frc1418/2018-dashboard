@@ -99,7 +99,7 @@ ipcMain.on('vufine', function(event, arg) {
 	//setting dialog
 	var vufineWindow = new BrowserWindow({
 		width: 1000,
-		height: 500
+		height: 600
 	});
 	// Load options page
 	vufineWindow.loadURL(`file://${ __dirname}/vufine.html`);
