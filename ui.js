@@ -12,7 +12,11 @@ var ui = {
 		arm: document.getElementById('gyro-arm'),
 		number: document.getElementById('gyro-number')
 	},
-	robotDiagram: {},
+	robotDiagram: {
+		body: document.getElementById('robot-diagram'),
+		arm: document.getElementById('robot-arm'),
+		armExtension: document.getElementById('robot-arm-extension')
+	},
 	tuning: {
 		list: document.getElementById('tuning'),
 		button: document.getElementById('tuning-button'),
@@ -317,4 +321,12 @@ ui.replay.name.onchange = function() {
 }
 ui.replay.target.onchange = function() {
 	NetworkTables.putValue('/components/recorder/title', this.value);
+}
+
+var out = false;
+ui.robotDiagram.body.onclick = function() {
+	out = !out;
+	console.log(out);
+	console.log(ui.robotDiagram.armExtension.style.transform);
+	ui.robotDiagram.armExtension.style.transform = 'translateX(' + (out ? 30 : 0)  + ')';
 }

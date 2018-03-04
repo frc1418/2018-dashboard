@@ -220,18 +220,24 @@ text {
     left: 1vw;
 }
 #robot-arm {
-    transform-origin: left;
+    transform-origin: left 10%;
     animation: spin-arm 2s infinite alternate-reverse;
 }
 @keyframes spin-arm {
     from { transform: rotate(30deg); }
     to   { transform: rotate(40deg);  }
 }
+#robot-arm-extension {
+    transition: 0.3s;
+}
 #robot-crosspiece {
 
 }
 .gear {
     stroke-dasharray: 3 3;
+}
+.cube {
+    fill: #a9c421;
 }
 #team {
     font-size: 28px;
