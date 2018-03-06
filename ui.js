@@ -274,7 +274,7 @@ ui.tuning.get.onclick = function() {
 
 // Update NetworkTables when autonomous selector is changed
 ui.auto.select.onchange = function() {
-	NetworkTables.putValue('SmartDashboard/Autonomous Mode/selected', this.value);
+	NetworkTables.putValue('/SmartDashboard/Autonomous Mode/selected', this.value);
 
 	ui.replay.wrapper.style.display = this.value === 'Replay' ? 'block' : 'none';
 };
@@ -282,39 +282,39 @@ ui.auto.select.onchange = function() {
 ui.camera.viewer.onclick = function() {
     ui.camera.id++;
 	if (ui.camera.id === ui.camera.srcs.length) ui.camera.id = 0;
-	NetworkTables.putValue('SmartDashboard/camera_id', ui.camera.id);
+	NetworkTables.putValue('/SmartDashboard/camera_id', ui.camera.id);
 };
 
 ui.theme.select.onchange = function() {
-    NetworkTables.putValue('SmartDashboard/theme', this.value);
+    NetworkTables.putValue('/SmartDashboard/theme', this.value);
 };
 
 ui.auto.dump.onclick = function() {
-	NetworkTables.putValue('autonomous/modular/dump', ui.auto.num === 0);
+	NetworkTables.putValue('/autonomous/modular/dump', ui.auto.num === 0);
 	ui.auto.num += (ui.auto.num === 0);
 };
 
 ui.auto.fetch.onchange = function() {
-	NetworkTables.putValue('autonomous/modular/fetch', this.value);
+	NetworkTables.putValue('/autonomous/modular/fetch', this.value);
 };
 
 ui.auto.cube.onchange = function() {
-	NetworkTables.putValue('autonomous/modular/cube', this.value);
+	NetworkTables.putValue('/autonomous/modular/cube', this.value);
 };
 
 ui.auto.position.left.onclick = function() {
-	NetworkTables.putValue('autonomous/position', this.value);
+	NetworkTables.putValue('/autonomous/position', this.value);
 };
 ui.auto.position.right.onclick = function() {
-	NetworkTables.putValue('autonomous/position', this.value);
+	NetworkTables.putValue('/autonomous/position', this.value);
 };
 ui.auto.position.middle.onclick = function() {
-	NetworkTables.putValue('autonomous/position', this.value);
+	NetworkTables.putValue('/autonomous/position', this.value);
 };
 
 ui.replay.name.onchange = function() {
-	NetworkTables.putValue('autonomous/Replay/source', this.value);
+	NetworkTables.putValue('/autonomous/Replay/source', this.value);
 }
 ui.replay.target.onchange = function() {
-	NetworkTables.putValue('components/recorder/title', this.value);
+	NetworkTables.putValue('/components/recorder/title', this.value);
 }
