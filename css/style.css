@@ -121,9 +121,8 @@ header {
     width: 50vw;
     height: 80vh;
     overflow: hidden;
-    background-color: #333;
-    background-image: url('http://10.14.18.2:1181/?action=stream');
-    background-size: contain;
+    background: url(../images/static.gif);
+    background-size: cover;
     background-repeat: no-repeat;
 }
 #vufine-camera {
