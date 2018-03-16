@@ -144,6 +144,9 @@ function onValueChanged(key, value, isNew) {
 		case '/components/recorder/title':
 			ui.replay.target.value = value;
 			break;
+		case '/components/arm/extended':
+			ui.robotDiagram.armExtension.style.transform = 'translateX(' + (value ? 30 : 0)  + 'px)';
+			break;
 		case '/SmartDashboard/theme':
             ui.theme.select.value = value;
             ui.theme.link.href = 'css/' + value + '.css';
@@ -328,5 +331,5 @@ ui.robotDiagram.body.onclick = function() {
 	out = !out;
 	console.log(out);
 	console.log(ui.robotDiagram.armExtension.style.transform);
-	ui.robotDiagram.armExtension.style.transform = 'translateX(' + (out ? 30 : 0)  + ')';
+	ui.robotDiagram.armExtension.style.transform = 'translateX(' + (out ? 30 : 0)  + 'px)';
 }
